@@ -6,6 +6,11 @@ function App() {
   const name: string = 'Gustavo'
   const age: number = 20
   const isWorking = true
+
+  // 2 - funcoes
+ const userGreeting = (name: string) =>{
+  return `Olá, ${name}!`
+ }
   
   return (
     
@@ -16,6 +21,7 @@ function App() {
        {isWorking && (
         <p>Está trabalhando!</p>
        )}
+       <h3>{userGreeting(name)}</h3>
       </div>
       
   )
