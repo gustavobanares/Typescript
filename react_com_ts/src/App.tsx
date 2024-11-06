@@ -4,7 +4,7 @@ import FirstComponent from "./components/FirstComponent"
 
 // 5 - desestruturando props
 import SecondComponent from "./components/SecondComponent"
-import Destructuring from "./components/Desestructuring"
+import Destructuring, {Category} from "./components/Desestructuring"
 
 // 6 - useState
 import State from "./components/State"
@@ -33,8 +33,8 @@ function App() {
        <h3>{userGreeting(name)}</h3>
        <FirstComponent />
        <SecondComponent name='Segundo' />
-       <Destructuring title='Primeiro post' content="Algum conteudo" commentsQty={10} tags={['ts', 'js']} />
-       <Destructuring title='Segundo post' content="Mais outro conteudo" commentsQty={5} tags={['python']} />
+       <Destructuring title='Primeiro post' content="Algum conteudo" commentsQty={10} tags={['ts', 'js']} category={Category.TS} />
+       <Destructuring title='Segundo post' content="Mais outro conteudo" commentsQty={5} tags={['python']} category={Category.P} />
        <State />
       </div>
       
