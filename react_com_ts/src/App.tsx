@@ -9,6 +9,11 @@ import Destructuring, {Category} from "./components/Desestructuring"
 // 6 - useState
 import State from "./components/State"
 
+// 9 - type
+type textOrNull = string | null
+
+type fixed = 'Isso' | 'Ou' | 'Aquilo'
+
 function App() {
 
   // 1 - variaveis
@@ -20,6 +25,14 @@ function App() {
  const userGreeting = (name: string) =>{
   return `Olá, ${name}!`
  }
+
+//  9 - type
+const myText:textOrNull = 'Tem algum texto aqui'
+let mySecondText:textOrNull = null
+
+// mySecondText = 'opa'
+
+const testandoFixed:fixed = 'Isso'
   
   return (
     
@@ -36,6 +49,8 @@ function App() {
        <Destructuring title='Primeiro post' content="Algum conteudo" commentsQty={10} tags={['ts', 'js']} category={Category.TS} />
        <Destructuring title='Segundo post' content="Mais outro conteudo" commentsQty={5} tags={['python']} category={Category.P} />
        <State />
+       {myText && <p>Tem texto na variavel</p>}
+       {mySecondText && <p>Tem texto na variavel</p>}
       </div>
       
   )
