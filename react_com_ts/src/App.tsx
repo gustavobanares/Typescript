@@ -10,6 +10,9 @@ import Destructuring, {Category} from "./components/Desestructuring"
 import State from "./components/State"
 import { createContext } from "react"
 
+// 10 - utilizando contexto
+import Context from "./Context"
+
 // 9 - type
 type textOrNull = string | null
 
@@ -22,7 +25,7 @@ interface IAppContext{
   projects: number,
 }
 
-export const appContext = createContext<IAppContext | null> (null)
+export const AppContext = createContext<IAppContext | null> (null)
 
 function App() {
 
@@ -68,6 +71,7 @@ const contextValue: IAppContext = {
        <State />
        {myText && <p>Tem texto na variavel</p>}
        {mySecondText && <p>Tem texto na variavel</p>}
+       <Context />
       </div>
       </AppContext.Provider>
   )
