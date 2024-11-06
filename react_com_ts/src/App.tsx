@@ -8,11 +8,21 @@ import Destructuring, {Category} from "./components/Desestructuring"
 
 // 6 - useState
 import State from "./components/State"
+import { createContext } from "react"
 
 // 9 - type
 type textOrNull = string | null
 
 type fixed = 'Isso' | 'Ou' | 'Aquilo'
+
+// 10 - context
+interface IAppContext{
+  language: string,
+  framework: string,
+  projects: number,
+}
+
+export const appContext = createContext<IAppContext | null> (null)
 
 function App() {
 
@@ -33,9 +43,16 @@ let mySecondText:textOrNull = null
 // mySecondText = 'opa'
 
 const testandoFixed:fixed = 'Isso'
+
+// 10 - context
+const contextValue: IAppContext = {
+  language: 'JavaScript',
+  framework: 'Express',
+  projects: 5,  
+}
   
   return (
-    
+    <AppContext.Provider value={contextValue}>
       <div>
        <h1>Typescript com React</h1>
        <h2>Nome: {name}</h2>
@@ -52,7 +69,7 @@ const testandoFixed:fixed = 'Isso'
        {myText && <p>Tem texto na variavel</p>}
        {mySecondText && <p>Tem texto na variavel</p>}
       </div>
-      
+      </AppContext.Provider>
   )
 }
 
