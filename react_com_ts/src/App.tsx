@@ -1,4 +1,6 @@
 
+// 4 - importacao de componentes
+import FirstComponent from "./components/FirstComponent"
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
         <p>Está trabalhando!</p>
        )}
        <h3>{userGreeting(name)}</h3>
+       <FirstComponent />
       </div>
       
   )
